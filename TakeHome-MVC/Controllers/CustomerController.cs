@@ -5,9 +5,11 @@ namespace TakeHome_MVC.Controllers
     public class Customer : Controller
     {
         // GET
-        public IActionResult Index()
+        public IActionResult Orders()
         {
+            var 
             return View();
         }
+
     }
 }

@@ -1,0 +1,40 @@
+@using System.Data
+@model TakeHome_MVC.Models.CustomerViewModel
+
+@{
+    ViewBag.Title = "Customer Orders";
+    Layout = "_Layout";
+}
+
+<h2>Orders</h2>
+<p>
+    <b>Name</b><br/>
+    @Model.FullName
+</p>
+
+<p>
+    <b>Customer #</b><br/>
+    @Model.CustomerNumber
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        @foreach (DataColumn dc in @Model.PivotData.Columns)
+        {
+            <th scope="col">@dc.ColumnName</th>
+        }
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (DataRow dr in @Model.PivotData.Rows)
+    {
+        <tr>
+            @foreach (DataColumn dc in Model.PivotData.Columns)
+            {
+                <td>@dr[dc]</td>
+            }
+        </tr>
+    }
+    </tbody>
+</table>

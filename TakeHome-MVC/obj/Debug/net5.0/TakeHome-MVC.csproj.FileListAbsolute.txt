@@ -38,3 +38,4 @@
 /home/jeff/RiderProjects/TakeHome-MVC/TakeHome-MVC/obj/Debug/net5.0/TakeHome-MVC.pdb
 /home/jeff/RiderProjects/TakeHome-MVC/TakeHome-MVC/obj/Debug/net5.0/TakeHome-MVC.genruntimeconfig.cache
 /home/jeff/RiderProjects/TakeHome-MVC/TakeHome-MVC/obj/Debug/net5.0/TakeHome-MVC.csproj.CopyComplete
+/home/jeff/RiderProjects/TakeHome-MVC/TakeHome-MVC/obj/Debug/net5.0/Razor/Views/Customer/Orders.cshtml.g.cs

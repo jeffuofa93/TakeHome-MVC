@@ -7,11 +7,6 @@ a.navbar-brand {
   word-break: break-all;
 }
 
-.navbar {
-  background-color: #39870C; // kind af green
-}
-
-
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;

@@ -5,7 +5,9 @@ using TakeHome_MVC.Models;
 namespace TakeHome_MVC.Controllers
 {
     /// <summary>
-    /// 
+    /// class: CustomerController
+    /// This class is the controller that communicates with the view to display our table. The class generates a
+    /// CustomerViewModel object and fills it with dummy data and then passes it to the View. 
     /// </summary>
     public class Customer : Controller
     {

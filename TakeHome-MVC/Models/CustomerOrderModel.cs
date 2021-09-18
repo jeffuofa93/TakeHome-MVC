@@ -5,6 +5,10 @@ using System.Linq;
 
 namespace TakeHome_MVC.Models
 {
+    /// <summary>
+    /// class: CustomerOrder
+    /// This class is the model for individual orders. 
+    /// </summary>
     public class CustomerOrder
     {
         public int OrderId { get; init; }

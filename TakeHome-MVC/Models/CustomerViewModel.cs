@@ -3,6 +3,11 @@ using System.Data;
 
 namespace TakeHome_MVC.Models
 {
+    /// <summary>
+    /// class: CustomerViewModel
+    /// This class provides the model for an individual customer and their orders. The most difficult method in this
+    /// class is the DoPivot. See method description 
+    /// </summary>
     public class CustomerViewModel
     {
         
@@ -24,6 +29,12 @@ namespace TakeHome_MVC.Models
             FullName = firstName + " " + lastName;
         }
 
+        /// <summary>
+        /// method: DoPivot
+        /// This method takes the list of CustomerOrder objects and converts it to a DataTable that can be used in the
+        /// view. The method creates a column for each field in the objects and then iterates over each object and
+        /// creates a row containing all field values for that object then adds the row to the DataTable.  
+        /// </summary>
         public void DoPivot()
         {
             var dataTable = new DataTable();

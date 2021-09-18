@@ -5,33 +5,44 @@ namespace TakeHome_MVC.Models
 {
     public class CustomerViewModel
     {
-        public int CustomerNumber { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FullName { get; set; }
-        public List<CustomerOrder> Orders { get; set; }
+        
+        public int CustomerNumber { get; init; }
+        public string FirstName { get; init; }
+        public string LastName { get; init; }
+        
+        public string FullName { get; }
 
-        public DataTable PivotData { get; set; }
+        public List<CustomerOrder> Orders { get; set; }
+        public DataTable PivotData { get; private set; }
+
+        public CustomerViewModel(int customerNumber, string firstName, string lastName)
+        {
+            CustomerNumber = customerNumber;
+            FirstName = firstName;
+            LastName = lastName;
+            Orders = new List<CustomerOrder>();
+            FullName = firstName + " " + lastName;
+        }
 
         public void DoPivot()
         {
-            var dt = new DataTable();
-            dt.Columns.Add("Order ID");
-            dt.Columns.Add("Order Date");
-            dt.Columns.Add("Item Description");
-            dt.Columns.Add("Total");
+            var dataTable = new DataTable();
+            dataTable.Columns.Add("Order ID");
+            dataTable.Columns.Add("Order Date");
+            dataTable.Columns.Add("Item Description");
+            dataTable.Columns.Add("Total");
 
-            foreach (var item in this.Orders)
+            foreach (var item in Orders)
             {
-                var dr = dt.NewRow();
-                dr["Order ID"] = item.OrderId;
-                dr["Order Date"] = item.OrderDate;
-                dr["Item Description"] = item.Description;
-                dr["Total"] = item.Total.ToString("C");
-                dt.Rows.Add(dr);
+                var dataRow = dataTable.NewRow();
+                dataRow["Order ID"] = item.OrderId;
+                dataRow["Order Date"] = item.OrderDate;
+                dataRow["Item Description"] = item.Description;
+                dataRow["Total"] = item.Total.ToString("C");
+                dataTable.Rows.Add(dataRow);
             }
 
-            this.PivotData = dt;
+            PivotData = dataTable;
         }
     }
 }
